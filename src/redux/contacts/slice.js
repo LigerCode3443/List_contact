@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getContacts } from "./operations";
+import { addContact, getContactInfo, getContacts } from "./operations";
 
 const initialState = {
   contacts: [],
+  contactInfo: null,
 };
 
 const slice = createSlice({
@@ -10,9 +11,16 @@ const slice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(getContacts.fulfilled, (state, action) => {
-      state.contacts = action.payload;
-    });
+    builder
+      .addCase(getContacts.fulfilled, (state, action) => {
+        state.contacts = action.payload;
+      })
+      .addCase(getContactInfo.fulfilled, (state, action) => {
+        state.contactInfo = action.payload;
+      })
+      .addCase(addContact.fulfilled, (state, action) => {
+        state.contacts.push(action.payload);
+      });
   },
 });
 
