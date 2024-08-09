@@ -13,7 +13,7 @@ export const ContactCard = () => {
       {resources?.map(({ avatar_url, fields, id }) => (
         <li
           key={id}
-          className="card card-side bg-base-100 shadow-xl relative overflow-hidden"
+          className="card card-side bg-base-100 shadow-xl relative overflow-hidden "
         >
           <Link to={`contact/:${id}`}>
             {" "}

@@ -33,7 +33,7 @@ export const AddContact = () => {
   };
 
   return (
-    <div className="sticky top-0 z-50 h-screen overflow-y-auto flex flex-col gap-5">
+    <div className="sticky top-0 sm:z-50 sm:hero-content xl:h-screen overflow-y-auto flex flex-col gap-5 overflow-hidden sm:bg-white sm:w-[100%] xl:max-w-[280px] xl:justify-start">
       <h3>Create Contact</h3>
       <form
         onSubmit={handleSubmit(onSubmit)}

@@ -12,7 +12,7 @@ function App() {
     dispatch(getContacts());
   }, [dispatch]);
   return (
-    <div>
+    <div className="sm:w-[400px] xl:w-[1280px] px-5 mx-auto">
       <Routes>
         <Route>
           <Route path="/" element={<Home />} />

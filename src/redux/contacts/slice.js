@@ -1,9 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { addContact, getContactInfo, getContacts } from "./operations";
+import { addContact, addTag, getContactInfo, getContacts } from "./operations";
 
 const initialState = {
   contacts: [],
   contactInfo: null,
+  tags: null,
 };
 
 const slice = createSlice({
@@ -20,6 +21,9 @@ const slice = createSlice({
       })
       .addCase(addContact.fulfilled, (state, action) => {
         state.contacts.push(action.payload);
+      })
+      .addCase(addTag.fulfilled, (state, action) => {
+        state.tags = action.payload;
       });
   },
 });
